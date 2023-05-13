@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class BrowserUtils {
     /**
@@ -24,32 +24,10 @@ public class BrowserUtils {
         }
     }
 
-    /** Switching windows tab
-     * @param expectedInUrl-> for verify if the url contains given String
-     * @param expectedInTitle -> to be compared against actualTitle
-     */
-    public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle) {
-
-        Set<String> allWindowsHandles = Driver.getDriver().getWindowHandles();
-
-        for (String each : allWindowsHandles) {
-
-            Driver.getDriver().switchTo().window(each);
-
-            System.out.println("Current URL: " + Driver.getDriver().getCurrentUrl());
-
-            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)) {
-                break;
-            }
-        }
-
-        //5. Assert:Title contains “expectedInTitle”
-        String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertTrue(actualTitle.contains(expectedInTitle));
-    }
 
     /**
      * This method accepts a String "expectedTitle" and Asserts if it is true
+     *
      * @param expectedTitle
      */
     public static void verifyTitle(String expectedTitle) {
