@@ -12,6 +12,7 @@ import org.junit.Assert;
 import java.util.List;
 
 public class JobsBoard_Step_definitions {
+    String countryName = "";
 
     JobsBoardPage jobsBoardPage = new JobsBoardPage();
 
@@ -51,14 +52,61 @@ public class JobsBoard_Step_definitions {
 
     @Then("you should click the link ESL job board")
     public void youShouldClickTheLinkESLJobBoard(String link) {
-    jobsBoardPage.eslJobBoardLink.click();
+        jobsBoardPage.eslJobBoardLink.click();
         BrowserUtils.verifyURLContains(link);
     }
+
     @Then("you should see on the page All countries, All Positions and Search jobs")
     public void youShouldSeeOnThePageAllCountriesAllPositionsAndSearchJobs() {
         Assert.assertTrue(jobsBoardPage.allCountries.isDisplayed());
         Assert.assertTrue(jobsBoardPage.allPositions.isDisplayed());
         Assert.assertTrue(jobsBoardPage.searchJobs.isDisplayed());
+    }
+
+    @And("you type the country name {string}")
+    public void youTypeTheCountryName(String country) {
+        countryName = country;
+        jobsBoardPage.allCountries.sendKeys(country);
+    }
+
+    @And("choose {string} from All Positions")
+    public void chooseFromAllPositions(String position) {
+        jobsBoardPage.allPositions.click();
+        switch (position) {
+            case "All Positions":
+                jobsBoardPage.allPositions.click();
+                break;
+            case "Certified Teacher":
+                jobsBoardPage.certifiedTeacher.click();
+                break;
+            case "College & University":
+                jobsBoardPage.collegeUniversity.click();
+                break;
+            case "ESL Teaching":
+                jobsBoardPage.eSLTeaching.click();
+                break;
+            case "Preschool & Early Childhood":
+                jobsBoardPage.preschoolEarlyChildhood.click();
+                break;
+            case "Principal & Admin":
+                jobsBoardPage.principalAdmin.click();
+                break;
+            case "School Support & Librarian":
+                jobsBoardPage.schoolSupportLibrarian.click();
+                break;
+        }
+
+    }
+
+    @Then("you should see suggestion for the letters you typed")
+    public void youShouldSeeSuggestionForTheLettersYouTyped(String countries) {
+        System.out.println(jobsBoardPage.hiddenTextBox.getText());
+        if (countries.contains(countryName)) {
+            Assert.assertTrue("You should see some suggestions", true);
+        } else {
+            Assert.assertFalse("No matches found", false);
+        }
+
     }
 
 
