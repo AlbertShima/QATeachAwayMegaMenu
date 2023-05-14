@@ -11,7 +11,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class JobsBoard_Step_definitions {
+public class JobsBoard_step_definitions {
     String countryName = "";
     JobsBoardPage jobsBoardPage = new JobsBoardPage();
 

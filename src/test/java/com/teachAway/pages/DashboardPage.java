@@ -11,4 +11,7 @@ public class DashboardPage {
     }
     @FindBy(xpath = "//a[@role='button']")
     public WebElement accept;
+
+    @FindBy(id = "profile-complete-modal-cancel-button")
+    public WebElement dismissUpdateMissingSections;
 }

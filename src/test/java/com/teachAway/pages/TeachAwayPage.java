@@ -43,11 +43,10 @@ public class TeachAwayPage {
     public void logIn(){
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         logIn.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitForElementToBeVisible(emailAddress,10);
         emailAddress.sendKeys(ConfigurationReader.getProperty("email"));
         password.sendKeys(ConfigurationReader.getProperty("password"));
         logInSubmit.click();
-        BrowserUtils.waitFor(2);
     }
 
     @FindBy(css = "span[title=\"Destinations\"]")
