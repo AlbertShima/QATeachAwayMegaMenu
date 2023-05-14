@@ -7,21 +7,17 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
     /**
-     * This method will accept int (in seconds) and execute Thread.sleep
+     * This method will accept int (in seconds) and execute implicit wait
      * for given duration
      *
      * @param second
      */
-    public static void sleep(int second) {
-        second *= 1000;
-        try {
-            Thread.sleep(second);
-        } catch (InterruptedException e) {
-
-        }
+    public static void implicitWait(int second) {
+        Driver.getDriver().manage().timeouts().implicitlyWait(second, TimeUnit.SECONDS);
     }
 
 

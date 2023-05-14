@@ -1,5 +1,6 @@
 package com.teachAway.pages;
 
+import com.teachAway.utilities.ConfigurationReader;
 import com.teachAway.utilities.Driver;
 import org.apache.poi.sl.draw.geom.Guide;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,35 @@ public class TeachAwayPage {
 
     @FindBy(xpath = "//a[@id='hs-eu-decline-button']")
     public WebElement decline;
+
+    @FindBy(xpath = "//a[@title='Login']")
+    public WebElement logIn;
+
+    @FindBy(xpath = "//input[@placeholder='Email address']")
+    public WebElement emailAddress;
+
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[@data-testid='ta-web-ui-button-login_action']")
+    public WebElement logInSubmit;
+
+    @FindBy(xpath = "//div[@data-testid='ta-web-ui-input-username-error']")
+    public WebElement thisFieldIsRequiredEmail;
+
+    @FindBy(xpath = "//div[@data-testid='ta-web-ui-input-password-error']")
+    public WebElement thisFieldIsRequiredPassword;
+
+    @FindBy(xpath = "//div[@class='ta-web-ui-toast__text-container']/div")
+    public WebElement errorEmailOrPasswordMessages;
+
+    //Log in method
+    public void logIn(){
+        logIn.click();
+        emailAddress.sendKeys(ConfigurationReader.getProperty("email"));
+        password.sendKeys(ConfigurationReader.getProperty("password"));
+        logInSubmit.click();
+    }
 
     @FindBy(css = "span[title=\"Destinations\"]")
     public WebElement destinations;
@@ -39,7 +69,7 @@ public class TeachAwayPage {
     @FindBy(css = "a[title='TEFL Certification Guide']")
     public WebElement tEFLCertificationGuide;
 
-    @FindBy(css = "span[title=\"Teacher\"]")
+    @FindBy(css = "span[title=\"Teacher Certification\"]")
     public WebElement teacherCertification;
 
     @FindBy(css = "span[title=\"Teacher Certification Guide\"]")
@@ -53,6 +83,9 @@ public class TeachAwayPage {
 
     @FindBy(css = "span[title=\"Arizona\"]")
     public WebElement arizona;
+
+    @FindBy(css = "a[title=\"Courses\"]")
+    public WebElement courses;
 
 
 

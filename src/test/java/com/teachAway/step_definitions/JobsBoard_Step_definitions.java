@@ -13,7 +13,6 @@ import java.util.List;
 
 public class JobsBoard_Step_definitions {
     String countryName = "";
-
     JobsBoardPage jobsBoardPage = new JobsBoardPage();
 
     @Given("that you are on tech away site")
@@ -108,6 +107,4 @@ public class JobsBoard_Step_definitions {
         }
 
     }
-
-
 }
