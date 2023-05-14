@@ -4,9 +4,11 @@ import com.teachAway.pages.JobsBoardPage;
 import com.teachAway.pages.TeachAwayPage;
 import com.teachAway.utilities.BrowserUtils;
 import com.teachAway.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 
 public class TeachAway_step_definitions {
     TeachAwayPage teachAwayPage = new TeachAwayPage();
@@ -89,7 +91,6 @@ public class TeachAway_step_definitions {
         //Assert.assertTrue(teachAwayPage.arizona.isDisplayed());
 
 
-
     }
 
 
@@ -99,5 +100,40 @@ public class TeachAway_step_definitions {
         Assert.assertEquals(actualURL, expectedURL);
     }
 
+
+    @When("user click REGISTER button")
+    public void userClickREGISTERButton() {
+        teachAwayPage.webRegister.click();
+    }
+
+    @And("fill all necessary fields, {string}, {string}, {string}, , {string}")
+    public void fillAllNecessaryFields(String firstName, String lastName, String email, String password) {
+        teachAwayPage.webInputFirstName.sendKeys(firstName);
+        teachAwayPage.webInputLastName.sendKeys(lastName);
+        teachAwayPage.webInputEmail.sendKeys(email);
+        teachAwayPage.webInputPassword.sendKeys(password);
+
+
+    }
+
+    @And("user check the check box")
+    public void userCheckTheCheckBox() {
+        teachAwayPage.webCheckboxSendUpdatesInput.click();
+    }
+
+    @And("user click Sign up button")
+    public void userClickSignUpButton() {
+        teachAwayPage.webButtonCreateAccountAction.click();
+    }
+
+    @Then("user see the welcome messages, {string}")
+    public void userSeeTheWelcomeMessages(String firstName) {
+        BrowserUtils.waitForElementToBeVisible(teachAwayPage.webWelcome,10 );
+        String expectedMessage = "Welcome, "+firstName+"!";
+        String actualMessage = teachAwayPage.webWelcome.getText();
+        System.out.println("expectedMessage = " + expectedMessage);
+        System.out.println("actualMessage = " + actualMessage);
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
 
 }

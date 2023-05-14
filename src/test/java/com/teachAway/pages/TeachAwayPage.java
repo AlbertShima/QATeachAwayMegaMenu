@@ -14,9 +14,32 @@ public class TeachAwayPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(id = "register")
+    public WebElement webRegister;
 
-    @FindBy(xpath = "//a[@id='hs-eu-decline-button']")
-    public WebElement decline;
+    @FindBy(id = "first_name")
+    public WebElement webInputFirstName;
+
+    @FindBy(id = "last_name")
+    public WebElement webInputLastName;
+
+    @FindBy(id = "email")
+    public WebElement webInputEmail;
+
+    @FindBy(id = "password")
+    public WebElement webInputPassword;
+
+    @FindBy(id = "send-updates")
+    public WebElement webCheckboxSendUpdatesInput;
+
+    @FindBy(id = "create_account_action")
+    public WebElement webButtonCreateAccountAction;
+
+    @FindBy(xpath = "//h2[@id='welcome-firstName']")
+    public WebElement webWelcome;
+
+    @FindBy(xpath = "//div[@class='ta-web-ui-button__text']")
+    public WebElement webGetStarted;
 
     @FindBy(xpath = "//a[@title='Login']")
     public WebElement logIn;
@@ -92,6 +115,8 @@ public class TeachAwayPage {
     public WebElement courses;
 
 
+
+    
 
     
     

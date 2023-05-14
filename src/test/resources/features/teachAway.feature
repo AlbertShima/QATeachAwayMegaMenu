@@ -1,5 +1,13 @@
 Feature: Functionality of main page
 
+  Scenario: Verify the title
+    Given that you are on tech away site
+    Then Verify that the title is "Teach Abroad or Online | Your Dream Teaching Job Awaits"
+
+  Scenario: Verify the URL
+    Given that you are on tech away site
+    Then  Verify that the url is "https://www.teachaway.com/"
+
   Scenario Outline: Verify user log in with VAlID credentials
     Given that you are on tech away site
     When user click on log in button
@@ -48,14 +56,17 @@ Feature: Functionality of main page
       | email | password    |
       |       | Aa123456789 |
 
-
-  Scenario: Verify the title
+  Scenario Outline: Verify the REGISTER button
     Given that you are on tech away site
-    Then Verify that the title is "Teach Abroad or Online | Your Dream Teaching Job Awaits"
+    When user click REGISTER button
+    And fill all necessary fields, "<firstName>", "<lastName>", "<email>", , "<password>"
+    And user check the check box
+    And user click Sign up button
+    Then user see the welcome messages, "<firstName>"
 
-  Scenario: Verify the URL
-    Given that you are on tech away site
-    Then  Verify that the url is "https://www.teachaway.com/"
+    Examples:
+      | firstName | lastName | email            | password  |
+      | gimi3     | gimi3    | g2iiii@gmail.com | a12345678 |
 
   Scenario: Verifying all the menu´s from main page
     Given that you are on tech away site
