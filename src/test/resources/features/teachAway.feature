@@ -29,7 +29,7 @@ Feature: Functionality of main page
     When user click on log in button
     And user enter email "<email>"
     And user enter password "<password>"
-    And  user clicks on login button
+    And  user clicks on log in button
     Then user should see a pop-up sms left bottom "Sorry, unrecognized e-mail or password. Please try again."
         #InValid credential
     Examples:
@@ -71,8 +71,8 @@ Feature: Functionality of main page
     Then user see the welcome messages, "<firstName>"
 
     Examples:
-      | firstName | lastName | email             | password  |
-      | gimi3     | gimi3    | g28iiii@gmail.com | a12345678 |
+      | firstName | lastName | email              | password  |
+      | Agim      | gimi3    | g28iii6i@gmail.com | a12345678 |
 
   @teachAway @wip
   Scenario: Verifying all the menu´s from main page

@@ -100,4 +100,7 @@ public class TeachAwayPage {
     @FindBy(css = "a[title=\"Courses\"]")
     public WebElement courses;
 
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[1]/div[1]/div[4]/div[1]/div/a")
+    public WebElement dashboard;
+
 }

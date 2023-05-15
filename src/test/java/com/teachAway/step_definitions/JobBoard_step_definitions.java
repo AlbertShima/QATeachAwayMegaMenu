@@ -58,8 +58,9 @@ public class JobBoard_step_definitions {
     @Then("user should see on the page All countries, All Positions and Search jobs")
     public void userShouldSeeOnThePageAllCountriesAllPositionsAndSearchJobs() {
         Assert.assertTrue(jobBoardPage.allCountries.isDisplayed());
-        Assert.assertTrue(jobBoardPage.allPositions.isDisplayed());
         Assert.assertTrue(jobBoardPage.searchJobs.isDisplayed());
+        BrowserUtils.waitForElementToBeVisible(jobBoardPage.allPositions,10);
+        Assert.assertTrue(jobBoardPage.allPositions.isDisplayed());
     }
 
     @And("user type the country name {string}")

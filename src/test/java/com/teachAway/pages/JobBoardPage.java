@@ -46,7 +46,7 @@ public class JobBoardPage {
     @FindBy(css = "[data-drupal-selector = 'edit-location']")
     public WebElement allCountries;
 
-    @FindBy(xpath = "//span[text()='All Positions']")
+    @FindBy(xpath = "//div[text()='All Positions']")
     public WebElement allPositions;
 
     @FindBy(xpath = "//span[text()='Certified Teacher']")

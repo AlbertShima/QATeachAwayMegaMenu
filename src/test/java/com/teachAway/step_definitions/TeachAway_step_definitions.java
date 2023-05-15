@@ -33,7 +33,7 @@ public class TeachAway_step_definitions {
 
     @Then("user should see the {string} on url")
     public void userShouldSeeTheOnUrl(String dashboard) {
-        BrowserUtils.implicitWait(10);
+        BrowserUtils.waitForElementToBeVisible(teachAwayPage.dashboard,10);
         BrowserUtils.verifyURLContains(dashboard);
     }
 
@@ -45,7 +45,7 @@ public class TeachAway_step_definitions {
 
     @Then("user should see a pop-up sms left bottom {string}")
     public void userShouldSeeAPopUpSmsLeftBottom(String invalidEmOrPass) {
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitForElementToBeVisible(teachAwayPage.errorEmailOrPasswordMessages,5);
         Assert.assertEquals(teachAwayPage.errorEmailOrPasswordMessages.getText(), invalidEmOrPass);
     }
 
