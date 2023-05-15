@@ -21,20 +21,14 @@ public class DashboardPage {
     @FindBy(xpath = "(//div[@class=\"ta-web-ui-button__text\"])[11]")
     public WebElement quickApply;
 
-    @FindBy(xpath = "(//div[@class=\"ta-web-ui-list__item-text--title\"])[1]")
-    public WebElement titleOfTheFirstJob;
-
     @FindBy(xpath = "//div[@data-testid=\"ta-web-ui-toast-text\"]")
     public WebElement youDontMeetTheRequirement;
 
     @FindBy(css = "li[id=\"tab-241909-1\"] a[class*=\"inner--active\"]")
     public WebElement applications;
 
-    @FindBy(css = "a")
-    public WebElement elementaryHomeroomTeacher;
+    @FindBy(xpath = "(//div[@class=\"ta-web-ui-list__item-text--title\"])[1]")
+    public WebElement titleOfTheFirstJob;
 
 
-
-
-    
 }

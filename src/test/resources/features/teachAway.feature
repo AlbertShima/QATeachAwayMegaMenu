@@ -37,7 +37,7 @@ Feature: Functionality of main page
       | albertshim@gmail.com  | Aa123456789 |
       | albertshima@gmail.com | Aa12345678  |
 
-  @teachAway @wip
+  @teachAway
   Scenario Outline: Verify user log in with BLANK PASSWORD credentials
     Given that you are on tech away site
     When user click on log in button
@@ -75,7 +75,7 @@ Feature: Functionality of main page
       | firstName | lastName | email             | password  |
       | gimi3     | gimi3    | g28iiii@gmail.com | a12345678 |
 
-  @teachAway @wip2
+  @teachAway @wip
   Scenario: Verifying all the menu´s from main page
     Given that you are on tech away site
     Then you should see all menu´s of the main page

@@ -13,7 +13,6 @@ public class TeachAwayPage {
     }
 
     //These Web Elements are for REGISTRATION part
-
     @FindBy(id = "register")
     public WebElement webRegister;
 

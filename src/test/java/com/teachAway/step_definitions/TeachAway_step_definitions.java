@@ -1,6 +1,6 @@
 package com.teachAway.step_definitions;
 
-import com.teachAway.pages.JobsAbroadPage;
+import com.teachAway.pages.JobBoardPage;
 import com.teachAway.pages.TeachAwayPage;
 import com.teachAway.utilities.BrowserUtils;
 import com.teachAway.utilities.Driver;
@@ -11,7 +11,7 @@ import org.junit.Assert;
 
 public class TeachAway_step_definitions {
     TeachAwayPage teachAwayPage = new TeachAwayPage();
-    JobsAbroadPage jobsBoardPage = new JobsAbroadPage();
+    JobBoardPage jobsBoardPage = new JobBoardPage();
 
     @When("user click on log in button")
     public void user_click_on_log_in_button() {
@@ -54,6 +54,8 @@ public class TeachAway_step_definitions {
 
     @Then("user should see below password field {string}")
     public void userShouldSeeBelowPasswordField(String blankCredentials) {
+        teachAwayPage.emailAddress.click();
+        BrowserUtils.waitForElementToBeVisible(teachAwayPage.thisFieldIsRequiredPassword,6);
         Assert.assertEquals(teachAwayPage.thisFieldIsRequiredPassword.getText(), blankCredentials);
     }
 
@@ -72,24 +74,14 @@ public class TeachAway_step_definitions {
         Assert.assertTrue(teachAwayPage.jobOpenings.isDisplayed());
         Assert.assertTrue(teachAwayPage.teachThe.isDisplayed());
         Assert.assertTrue(teachAwayPage.community.isDisplayed());
-
         Assert.assertTrue(teachAwayPage.courses.isDisplayed());
-
         teachAwayPage.tefl.click();
         Assert.assertTrue(teachAwayPage.tefl.isDisplayed());
         BrowserUtils.waitFor(3);
         Assert.assertTrue(teachAwayPage.teflCourses.isDisplayed());
-        //Assert.assertTrue(teachAwayPage.tEFLCertificationGuide.isDisplayed());
-
         teachAwayPage.teacherCertification.click();
         BrowserUtils.waitFor(3);
         Assert.assertTrue(teachAwayPage.teacherCertification.isDisplayed());
-        //Assert.assertTrue(teachAwayPage.teacherCertificationGuide.isDisplayed());
-        //Assert.assertTrue(teachAwayPage.certificationPrograms.isDisplayed());
-        //Assert.assertTrue(teachAwayPage.hawai.isDisplayed());
-        //Assert.assertTrue(teachAwayPage.arizona.isDisplayed());
-
-
     }
 
 
