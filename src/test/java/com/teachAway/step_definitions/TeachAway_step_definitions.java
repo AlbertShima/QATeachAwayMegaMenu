@@ -1,6 +1,6 @@
 package com.teachAway.step_definitions;
 
-import com.teachAway.pages.JobsBoardPage;
+import com.teachAway.pages.JobsAbroadPage;
 import com.teachAway.pages.TeachAwayPage;
 import com.teachAway.utilities.BrowserUtils;
 import com.teachAway.utilities.Driver;
@@ -8,11 +8,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.interactions.Actions;
 
 public class TeachAway_step_definitions {
     TeachAwayPage teachAwayPage = new TeachAwayPage();
-    JobsBoardPage jobsBoardPage = new JobsBoardPage();
+    JobsAbroadPage jobsBoardPage = new JobsAbroadPage();
 
     @When("user click on log in button")
     public void user_click_on_log_in_button() {

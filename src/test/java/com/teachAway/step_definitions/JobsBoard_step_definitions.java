@@ -1,6 +1,6 @@
 package com.teachAway.step_definitions;
 
-import com.teachAway.pages.JobsBoardPage;
+import com.teachAway.pages.JobsAbroadPage;
 import com.teachAway.utilities.BrowserUtils;
 import com.teachAway.utilities.ConfigurationReader;
 import com.teachAway.utilities.Driver;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class JobsBoard_step_definitions {
     String countryName = "";
-    JobsBoardPage jobsBoardPage = new JobsBoardPage();
+    JobsAbroadPage jobsAbroadPage = new JobsAbroadPage();
 
     @Given("that you are on tech away site")
     public void that_you_are_on_tech_away_site() {
@@ -22,8 +22,8 @@ public class JobsBoard_step_definitions {
 
     @And("you go to the jobs board")
     public void youGoToTheJobsBoard() {
-        jobsBoardPage.jobs.click();
-        jobsBoardPage.jobBoard.click();
+        jobsAbroadPage.jobs.click();
+        jobsAbroadPage.jobBoard.click();
     }
 
     @Then("you should see the text")
@@ -34,13 +34,13 @@ public class JobsBoard_step_definitions {
         for (int i = 0; i < expectedString.size(); i++) {
             switch (i) {
                 case 0:
-                    actualString = jobsBoardPage.findTeachingJobsAbroad.getText();
+                    actualString = jobsAbroadPage.findTeachingJobsAbroad.getText();
                     break;
                 case 1:
-                    actualString = jobsBoardPage.h2Text.getText();
+                    actualString = jobsAbroadPage.h2Text.getText();
                     break;
                 case 2:
-                    actualString = jobsBoardPage.h3Text.getText();
+                    actualString = jobsAbroadPage.h3Text.getText();
                     break;
             }
 
@@ -51,47 +51,47 @@ public class JobsBoard_step_definitions {
 
     @Then("you should click the link ESL job board")
     public void youShouldClickTheLinkESLJobBoard(String link) {
-        jobsBoardPage.eslJobBoardLink.click();
+        jobsAbroadPage.eslJobBoardLink.click();
         BrowserUtils.verifyURLContains(link);
     }
 
     @Then("you should see on the page All countries, All Positions and Search jobs")
     public void youShouldSeeOnThePageAllCountriesAllPositionsAndSearchJobs() {
-        Assert.assertTrue(jobsBoardPage.allCountries.isDisplayed());
-        Assert.assertTrue(jobsBoardPage.allPositions.isDisplayed());
-        Assert.assertTrue(jobsBoardPage.searchJobs.isDisplayed());
+        Assert.assertTrue(jobsAbroadPage.allCountries.isDisplayed());
+        Assert.assertTrue(jobsAbroadPage.allPositions.isDisplayed());
+        Assert.assertTrue(jobsAbroadPage.searchJobs.isDisplayed());
     }
 
     @And("you type the country name {string}")
     public void youTypeTheCountryName(String country) {
         countryName = country;
-        jobsBoardPage.allCountries.sendKeys(country);
+        jobsAbroadPage.allCountries.sendKeys(country);
     }
 
     @And("choose {string} from All Positions")
     public void chooseFromAllPositions(String position) {
-        jobsBoardPage.allPositions.click();
+        jobsAbroadPage.allPositions.click();
         switch (position) {
             case "All Positions":
-                jobsBoardPage.allPositions.click();
+                jobsAbroadPage.allPositions.click();
                 break;
             case "Certified Teacher":
-                jobsBoardPage.certifiedTeacher.click();
+                jobsAbroadPage.certifiedTeacher.click();
                 break;
             case "College & University":
-                jobsBoardPage.collegeUniversity.click();
+                jobsAbroadPage.collegeUniversity.click();
                 break;
             case "ESL Teaching":
-                jobsBoardPage.eSLTeaching.click();
+                jobsAbroadPage.eSLTeaching.click();
                 break;
             case "Preschool & Early Childhood":
-                jobsBoardPage.preschoolEarlyChildhood.click();
+                jobsAbroadPage.preschoolEarlyChildhood.click();
                 break;
             case "Principal & Admin":
-                jobsBoardPage.principalAdmin.click();
+                jobsAbroadPage.principalAdmin.click();
                 break;
             case "School Support & Librarian":
-                jobsBoardPage.schoolSupportLibrarian.click();
+                jobsAbroadPage.schoolSupportLibrarian.click();
                 break;
         }
 
@@ -99,7 +99,7 @@ public class JobsBoard_step_definitions {
 
     @Then("you should see suggestion for the letters you typed")
     public void youShouldSeeSuggestionForTheLettersYouTyped(String countries) {
-        System.out.println(jobsBoardPage.hiddenTextBox.getText());
+        System.out.println(jobsAbroadPage.hiddenTextBox.getText());
         if (countries.contains(countryName)) {
             Assert.assertTrue("You should see some suggestions", true);
         } else {

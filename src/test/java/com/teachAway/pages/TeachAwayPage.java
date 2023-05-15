@@ -14,6 +14,8 @@ public class TeachAwayPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    //These Web Elements are for REGISTRATION part
+
     @FindBy(id = "register")
     public WebElement webRegister;
 
@@ -41,6 +43,7 @@ public class TeachAwayPage {
     @FindBy(xpath = "//div[@class='ta-web-ui-button__text']")
     public WebElement webGetStarted;
 
+    //These Web Elements are for LOG IN part
     @FindBy(xpath = "//a[@title='Login']")
     public WebElement logIn;
 
@@ -72,6 +75,7 @@ public class TeachAwayPage {
         logInSubmit.click();
     }
 
+    //Web Elements of mega menu
     @FindBy(css = "span[title=\"Destinations\"]")
     public WebElement destinations;
 
@@ -113,17 +117,5 @@ public class TeachAwayPage {
 
     @FindBy(css = "a[title=\"Courses\"]")
     public WebElement courses;
-
-
-
-    
-
-    
-    
-
-
-
-    
-
 
 }

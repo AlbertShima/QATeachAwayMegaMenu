@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class JobsBoardPage {
-    public JobsBoardPage(){
+public class JobsAbroadPage {
+    public JobsAbroadPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
