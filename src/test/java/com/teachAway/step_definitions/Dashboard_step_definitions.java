@@ -23,8 +23,8 @@ public class Dashboard_step_definitions {
         dashboardPage.accept.click();
     }
 
-    @Then("you should see {string} in URL")
-    public void you_should_see_in_url(String dashboard) {
+    @Then("user should see {string} in URL")
+    public void user_should_see_in_url(String dashboard) {
         BrowserUtils.waitFor(2);
         BrowserUtils.verifyURLContains(dashboard);
     }

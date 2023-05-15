@@ -3,14 +3,12 @@ package com.teachAway.pages;
 import com.teachAway.utilities.BrowserUtils;
 import com.teachAway.utilities.ConfigurationReader;
 import com.teachAway.utilities.Driver;
-import org.apache.poi.sl.draw.geom.Guide;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TeachAwayPage {
-    public TeachAwayPage(){
+    public TeachAwayPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -66,10 +64,10 @@ public class TeachAwayPage {
     public WebElement errorEmailOrPasswordMessages;
 
     //Log in method
-    public void logIn(){
+    public void logIn() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         logIn.click();
-        BrowserUtils.waitForElementToBeVisible(emailAddress,10);
+        BrowserUtils.waitForElementToBeVisible(emailAddress, 10);
         emailAddress.sendKeys(ConfigurationReader.getProperty("email"));
         password.sendKeys(ConfigurationReader.getProperty("password"));
         logInSubmit.click();

@@ -4,13 +4,13 @@ Feature: Dashboard functionality
     #Given that you are in dashboard page
     #When remove the alerts and pop up-s
 
-  @smoke @Regression
+  @dashboard @smoke @Regression
   Scenario: Verify that URL contains dashboard after login
     Given that you are in dashboard page
     When remove the alerts and pop up-s
-    Then you should see "dashboard" in URL
+    Then user should see "dashboard" in URL
 
-
+  @dashboard
   Scenario: Verify text change on "Quick Apply" button if requirements are meet
     Given that you are in dashboard page
     When remove the alerts and pop up-s

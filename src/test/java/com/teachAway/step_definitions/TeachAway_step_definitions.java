@@ -99,7 +99,6 @@ public class TeachAway_step_definitions {
         Assert.assertEquals(actualURL, expectedURL);
     }
 
-
     @When("user click REGISTER button")
     public void userClickREGISTERButton() {
         teachAwayPage.webRegister.click();
@@ -111,8 +110,6 @@ public class TeachAway_step_definitions {
         teachAwayPage.webInputLastName.sendKeys(lastName);
         teachAwayPage.webInputEmail.sendKeys(email);
         teachAwayPage.webInputPassword.sendKeys(password);
-
-
     }
 
     @And("user check the check box")

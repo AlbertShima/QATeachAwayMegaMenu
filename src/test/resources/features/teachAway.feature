@@ -1,13 +1,16 @@
 Feature: Functionality of main page
 
-  Scenario: Verify the title
+  @teachAway
+  Scenario: Verify the title of the page
     Given that you are on tech away site
     Then Verify that the title is "Teach Abroad or Online | Your Dream Teaching Job Awaits"
 
-  Scenario: Verify the URL
+  @teachAway
+  Scenario: Verify the URL of the page
     Given that you are on tech away site
     Then  Verify that the url is "https://www.teachaway.com/"
 
+  @teachAway
   Scenario Outline: Verify user log in with VAlID credentials
     Given that you are on tech away site
     When user click on log in button
@@ -20,6 +23,7 @@ Feature: Functionality of main page
       | email                 | password    |
       | albertshima@gmail.com | Aa123456789 |
 
+  @teachAway
   Scenario Outline: Verify user log in with INVAlID credentials
     Given that you are on tech away site
     When user click on log in button
@@ -33,6 +37,7 @@ Feature: Functionality of main page
       | albertshim@gmail.com  | Aa123456789 |
       | albertshima@gmail.com | Aa12345678  |
 
+  @teachAway @wip
   Scenario Outline: Verify user log in with BLANK PASSWORD credentials
     Given that you are on tech away site
     When user click on log in button
@@ -45,6 +50,7 @@ Feature: Functionality of main page
       | email                | password |
       | albertshim@gmail.com |          |
 
+  @teachAway
   Scenario Outline: Verify user log in with BLANK EMAIL credentials
     Given that you are on tech away site
     When user click on log in button
@@ -56,6 +62,7 @@ Feature: Functionality of main page
       | email | password    |
       |       | Aa123456789 |
 
+  @teachAway
   Scenario Outline: Verify the REGISTER button
     Given that you are on tech away site
     When user click REGISTER button
@@ -65,9 +72,10 @@ Feature: Functionality of main page
     Then user see the welcome messages, "<firstName>"
 
     Examples:
-      | firstName | lastName | email            | password  |
-      | gimi3     | gimi3    | g2iiii@gmail.com | a12345678 |
+      | firstName | lastName | email             | password  |
+      | gimi3     | gimi3    | g28iiii@gmail.com | a12345678 |
 
+  @teachAway @wip2
   Scenario: Verifying all the menu´s from main page
     Given that you are on tech away site
     Then you should see all menu´s of the main page
