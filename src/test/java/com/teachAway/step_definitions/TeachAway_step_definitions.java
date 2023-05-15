@@ -20,23 +20,19 @@ public class TeachAway_step_definitions {
 
     @When("user enter email {string}")
     public void user_enter_email(String email) {
-        BrowserUtils.verifyElementDisplayed(teachAwayPage.emailAddress);
+        BrowserUtils.implicitWait(4);
         teachAwayPage.emailAddress.sendKeys(email);
-    }
-
-    @When("user enter password {string}")
-    public void user_enter_password(String password) {
-        teachAwayPage.password.sendKeys(password);
     }
 
     @When("user clicks on login button")
     public void user_clicks_on_login_button() {
-        teachAwayPage.logInSubmit.click();
+       teachAwayPage.password.click();
+        teachAwayPage.emailAddress.click();
+        teachAwayPage.password.click();
     }
 
     @Then("user should see the {string} on url")
     public void userShouldSeeTheOnUrl(String dashboard) {
-        BrowserUtils.waitFor(5);
         BrowserUtils.verifyURLContains(dashboard);
     }
 
@@ -54,8 +50,6 @@ public class TeachAway_step_definitions {
 
     @Then("user should see below password field {string}")
     public void userShouldSeeBelowPasswordField(String blankCredentials) {
-        teachAwayPage.emailAddress.click();
-        BrowserUtils.waitForElementToBeVisible(teachAwayPage.thisFieldIsRequiredPassword,6);
         Assert.assertEquals(teachAwayPage.thisFieldIsRequiredPassword.getText(), blankCredentials);
     }
 
@@ -116,8 +110,8 @@ public class TeachAway_step_definitions {
 
     @Then("user see the welcome messages, {string}")
     public void userSeeTheWelcomeMessages(String firstName) {
-        BrowserUtils.waitForElementToBeVisible(teachAwayPage.webWelcome,10 );
-        String expectedMessage = "Welcome, "+firstName+"!";
+        BrowserUtils.waitForElementToBeVisible(teachAwayPage.webWelcome, 10);
+        String expectedMessage = "Welcome, " + firstName + "!";
         String actualMessage = teachAwayPage.webWelcome.getText();
         System.out.println("expectedMessage = " + expectedMessage);
         System.out.println("actualMessage = " + actualMessage);

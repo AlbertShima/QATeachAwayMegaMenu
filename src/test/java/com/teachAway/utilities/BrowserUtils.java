@@ -1,7 +1,6 @@
 package com.teachAway.utilities;
 
 import org.junit.Assert;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -56,20 +55,5 @@ public class BrowserUtils {
      */
     public static void implicitWait(int second) {
         Driver.getDriver().manage().timeouts().implicitlyWait(second, TimeUnit.SECONDS);
-    }
-
-    /**
-     * Verifies whether the element is displayed on page
-     *
-     * @throws AssertionError if the element is not found or not displayed
-     */
-    public static void verifyElementDisplayed(WebElement element) {
-        try {
-            Assert.assertTrue("Element not visible: " + element, element.isDisplayed());
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            Assert.fail("Element not found: " + element);
-
-        }
     }
 }

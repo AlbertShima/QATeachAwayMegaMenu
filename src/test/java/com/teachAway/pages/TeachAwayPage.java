@@ -56,7 +56,7 @@ public class TeachAwayPage {
     @FindBy(xpath = "//div[@data-testid='ta-web-ui-input-username-error']")
     public WebElement thisFieldIsRequiredEmail;
 
-    @FindBy(xpath = "//div[@data-testid='ta-web-ui-input-password-error']")
+    @FindBy(xpath = "//div[@data-testid=\"ta-web-ui-input-password-error\"]")
     public WebElement thisFieldIsRequiredPassword;
 
     @FindBy(xpath = "//div[@class='ta-web-ui-toast__text-container']/div")
@@ -94,23 +94,8 @@ public class TeachAwayPage {
     @FindBy(css = "a[title=\"TEFL Courses\"]")
     public WebElement teflCourses;
 
-    @FindBy(css = "a[title='TEFL Certification Guide']")
-    public WebElement tEFLCertificationGuide;
-
     @FindBy(css = "span[title=\"Teacher Certification\"]")
     public WebElement teacherCertification;
-
-    @FindBy(css = "span[title=\"Teacher Certification Guide\"]")
-    public WebElement teacherCertificationGuide;
-
-    @FindBy(css = "span[title=\"Certification Programs\"]")
-    public WebElement certificationPrograms;
-
-    @FindBy(css = "span[title=\"Hawai\"]")
-    public WebElement hawai;
-
-    @FindBy(css = "span[title=\"Arizona\"]")
-    public WebElement arizona;
 
     @FindBy(css = "a[title=\"Courses\"]")
     public WebElement courses;

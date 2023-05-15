@@ -42,13 +42,12 @@ Feature: Functionality of main page
     Given that you are on tech away site
     When user click on log in button
     And user enter email "<email>"
-    And user enter password "<password>"
     And  user clicks on login button
     Then user should see below password field "This field is required"
         #InValid credential
     Examples:
-      | email                | password |
-      | albertshim@gmail.com |          |
+      | email                 |
+      | albertshima@gmail.com |
 
   @teachAway
   Scenario Outline: Verify user log in with BLANK EMAIL credentials
