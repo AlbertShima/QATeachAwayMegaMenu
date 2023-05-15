@@ -16,7 +16,7 @@ Feature: Functionality of main page
     When user click on log in button
     And user enter email "<email>"
     And user enter password "<password>"
-    And  user clicks on login button
+    And  user clicks on log in button
     Then user should see the "dashboard" on url
     #Valid credential
     Examples:

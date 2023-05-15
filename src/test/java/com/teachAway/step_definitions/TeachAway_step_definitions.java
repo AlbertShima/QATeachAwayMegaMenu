@@ -33,6 +33,7 @@ public class TeachAway_step_definitions {
 
     @Then("user should see the {string} on url")
     public void userShouldSeeTheOnUrl(String dashboard) {
+        BrowserUtils.implicitWait(10);
         BrowserUtils.verifyURLContains(dashboard);
     }
 
@@ -118,4 +119,13 @@ public class TeachAway_step_definitions {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
 
+    @And("user enter password {string}")
+    public void userEnterPassword(String password) {
+        teachAwayPage.password.sendKeys(password);
+    }
+
+    @And("user clicks on log in button")
+    public void userClicksOnLogInButton() {
+        teachAwayPage.logInSubmit.click();
+    }
 }

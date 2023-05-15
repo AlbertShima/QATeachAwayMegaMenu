@@ -44,4 +44,5 @@ public class Dashboard_step_definitions {
             Assert.assertTrue(dashboardPage.quickApply.getText().contains(applied));
         }
     }
+
 }
