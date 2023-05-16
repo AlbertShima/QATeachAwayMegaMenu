@@ -1,12 +1,12 @@
-Feature: Functionality of main page
+Feature: Functionality of the main page https://www.teachaway.com/
 
   @teachAway
-  Scenario: Verify the title of the page
+  Scenario: Verify the title of the page https://www.teachaway.com/
     Given that you are on tech away site
     Then Verify that the title is "Teach Abroad or Online | Your Dream Teaching Job Awaits"
 
   @teachAway
-  Scenario: Verify the URL of the page
+  Scenario: Verify the URL of the page https://www.teachaway.com/
     Given that you are on tech away site
     Then  Verify that the url is "https://www.teachaway.com/"
 
@@ -62,7 +62,7 @@ Feature: Functionality of main page
       |       | Aa123456789 |
 
   @teachAway
-  Scenario Outline: Verify the REGISTER button
+  Scenario Outline: Verify the REGISTER button is working properly
     Given that you are on tech away site
     When user click REGISTER button
     And fill all necessary fields, "<firstName>", "<lastName>", "<email>", , "<password>"
@@ -75,6 +75,6 @@ Feature: Functionality of main page
       | Agim      | gimi3    | g28iii6i@gmail.com | a12345678 |
 
   @teachAway @wip
-  Scenario: Verifying all the menu´s from main page
+  Scenario: Verifying all the menu´s from main page are displayed
     Given that you are on tech away site
     Then you should see all menu´s of the main page

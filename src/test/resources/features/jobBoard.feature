@@ -1,7 +1,7 @@
-Feature: JOBS Abroad tab from the mega-menu
+Feature: Some functionality of JOBS Abroad tab from the mega-menu
 
   @jobsAbroad
-  Scenario: Jobs board functionality
+  Scenario: Jobs board text are displayed
     Given that you are on tech away site
     And user go to the jobs board
     Then user should see the text
@@ -10,7 +10,7 @@ Feature: JOBS Abroad tab from the mega-menu
       | Looking for ESL teaching jobs? View our ESL job board.                                                                                                                     |
 
   @jobsAbroad
-  Scenario: Verify link "ESL job board" functionality
+  Scenario: Verify link "ESL job board" functionality is clickable
     Given that you are on tech away site
     And user go to the jobs board
     Then user should click the link ESL job board
