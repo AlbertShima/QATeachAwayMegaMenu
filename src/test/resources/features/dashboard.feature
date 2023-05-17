@@ -15,7 +15,7 @@ Feature: Dashboard functionality
     Given that you are in dashboard page
     When remove the alerts and pop up-s
     And user click to quick apply button
-    Then the text of the button should change to "Applied"
+    Then the text of the button should change to "Applied" or appear left bottom "You do not meet the requirements for this job"
 
 
 

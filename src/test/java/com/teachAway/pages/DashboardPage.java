@@ -21,7 +21,7 @@ public class DashboardPage {
     @FindBy(xpath = "(//div[@class=\"ta-web-ui-button__text\"])[11]")
     public WebElement quickApply;
 
-    @FindBy(xpath = "//div[@data-testid=\"ta-web-ui-toast-text\"]")
+    @FindBy(xpath = "//div[@data-testid=\"ta-web-ui-toast-text\"][@class=\"ta-web-ui-toast__text\"]")
     public WebElement youDontMeetTheRequirement;
 
     @FindBy(css = "li[id=\"tab-241909-1\"] a[class*=\"inner--active\"]")
@@ -29,6 +29,9 @@ public class DashboardPage {
 
     @FindBy(xpath = "(//div[@class=\"ta-web-ui-list__item-text--title\"])[1]")
     public WebElement titleOfTheFirstJob;
+
+
+
 
 
 }

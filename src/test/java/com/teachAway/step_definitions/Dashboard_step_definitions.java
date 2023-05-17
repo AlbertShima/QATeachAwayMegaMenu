@@ -35,14 +35,14 @@ public class Dashboard_step_definitions {
         dashboardPage.quickApply.click();
     }
 
-    @Then("the text of the button should change to {string}")
-    public void theTextOfTheButtonShouldChangeTo(String applied) {
+    @Then("the text of the button should change to {string} or appear left bottom {string}")
+    public void theTextOfTheButtonShouldChangeToOrAppear(String applied, String youDontMeetTheRequirement) {
         BrowserUtils.waitForElementToBeVisible(dashboardPage.youDontMeetTheRequirement, 2);
         if (dashboardPage.youDontMeetTheRequirement.isDisplayed()) {
-            Assert.assertTrue(true);
+            System.out.println(dashboardPage.youDontMeetTheRequirement.getText());
+            Assert.assertEquals(dashboardPage.youDontMeetTheRequirement.getText(), youDontMeetTheRequirement);
         } else {
             Assert.assertTrue(dashboardPage.quickApply.getText().contains(applied));
         }
     }
-
 }
